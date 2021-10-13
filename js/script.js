@@ -1,28 +1,14 @@
 
+/// new //
 
+ const buttonRock = document.getElementById('button-rock');
+ const buttonPaper = document.getElementById('button-paper');
+ const buttonScissors = document.getElementById('button-scissors');
 
-
-
-
-
-
-
-
-
-/// new  game with buttons ///
-
-var argButtonName, buttonTest, buttonPaper, buttonStone, buttonScissors;
-
-
-buttonRock = document.getElementById('button-rock');
-buttonPaper = document.getElementById('button-paper');
-buttonScissors = document.getElementById('button-scissors');
-// buttonTest = document.getElementById('button-test');
 
 buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
 buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
 buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
-// buttonTest.addEventListener('click', function(){ buttonClicked('Guzik TEST'); });
 
 
 
@@ -30,9 +16,7 @@ function buttonClicked(argButtonName) {
     clearMessages();
     console.log(argButtonName + ' został kliknięty')
 
-    playerMove = argButtonName;
-
-    var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
+    let playerMove = argButtonName;
 
 
     function getMoveName(argMoveId) {
@@ -69,9 +53,13 @@ function buttonClicked(argButtonName) {
     
     
     console.log('ruch gracza to: ' + playerMove);
-    randomNumber = Math.floor(Math.random() * 3 + 1);
+
+    let randomNumber = Math.floor(Math.random() * 3 + 1);
+
     console.log('wylosowana liczba to: ' + randomNumber);
-    computerMove = getMoveName(randomNumber);
+
+    let computerMove = getMoveName(randomNumber);
+
     console.log('ruch komputera to: ' + computerMove);
     displayResult(playerMove, computerMove);
     
